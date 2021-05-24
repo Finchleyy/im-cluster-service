@@ -44,7 +44,7 @@ public class ImNettyServer {
                 .localAddress(socketAddress)
                 //临时存放已完成三次握手的请求的队列的最大长度  默认50
                 .option(ChannelOption.SO_BACKLOG, 1024)
-                // 两小时内没有数据的通信时,TCP会自动发送一个活动探测数据报文
+                //两小时内没有数据的通信时,TCP会自动发送一个活动探测数据报文
                 .childOption(ChannelOption.SO_KEEPALIVE, true);
         try {
             //绑定端口,开始接收进来的连接

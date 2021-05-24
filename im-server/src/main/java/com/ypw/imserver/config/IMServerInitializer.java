@@ -1,5 +1,6 @@
 package com.ypw.imserver.config;
 
+import com.ypw.imserver.handler.ImBusinessHandler;
 import io.netty.channel.ChannelInitializer;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.handler.timeout.IdleStateHandler;
@@ -34,6 +35,6 @@ public class IMServerInitializer extends ChannelInitializer<SocketChannel> {
         // 心跳处理器
         //socketChannel.pipeline().addLast(new HeartbeatHandler());
         // 业务处理器
-        //socketChannel.pipeline().addLast(new BusinessHandler());
+        socketChannel.pipeline().addLast(new ImBusinessHandler());
     }
 }
