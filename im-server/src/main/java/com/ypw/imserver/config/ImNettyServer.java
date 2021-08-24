@@ -40,7 +40,7 @@ public class ImNettyServer {
         ServerBootstrap bootstrap = new ServerBootstrap()
                 .group(bossGroup, workGroup)
                 .channel(NioServerSocketChannel.class)
-                .childHandler(new IMServerInitializer())
+                .childHandler(new NioWebSocketChannelInitializer())
                 .localAddress(socketAddress)
                 //临时存放已完成三次握手的请求的队列的最大长度  默认50
                 .option(ChannelOption.SO_BACKLOG, 1024)
